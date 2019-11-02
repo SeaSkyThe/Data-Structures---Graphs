@@ -7,7 +7,7 @@ int main(void){
 
     //Lendo matriz de adj de um arquivo
     int tipo, tamanho;
-    FILE *f = fopen("1.txt", "r+");
+    FILE *f = fopen("arquivos/1.txt", "r+");
 
     if(f == NULL){
         return 0;
@@ -20,11 +20,11 @@ int main(void){
     print_matriz(matriz_adj, tamanho);
 
     //Escrevendo a matriz num arquivo
-    FILE *escrita = fopen("escrita_matriz.txt", "w+");
+    FILE *escrita = fopen("arquivos/escrita_matriz.txt", "w+");
     escreve_matriz_arquivo(escrita, matriz_adj, tipo, tamanho);
 
 
     //Testes de buscas.
-    busca_profundidade(matriz_adj, tamanho, 0, "tabela_gravada.txt");
+    busca_profundidade(0, "arquivos/1.txt", "arquivos/tabela_gravada.txt"); //primeiro parametro é raiz, segundo parametro é arquivo do grafo e o terceiro o arquivo de saida
     return 0;
 }

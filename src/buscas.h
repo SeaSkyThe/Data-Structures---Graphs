@@ -7,7 +7,7 @@ int logger = 1;
 //ASSINATURAS
 void gerar_tabela_profundidade(int matriz[TAM][TAM]);
 void gerar_tabela_largura(int matriz[TAM][TAM]);
-void busca_profundidade(int matriz[TAM][TAM], int tamanho, int raiz, char *nome_arquivo);
+int busca_profundidade(int raiz, char *arquivo_grafo, char *arquivo_destino);
 void busca_largura(int matriz[TAM][TAM],int tamanho, int raiz);
 //void visita_profundidade(struct node_profundidade* node, struct node_profundidade* vertices[] ,int matriz[TAM][TAM], int tamanho, int *tempo);
 
@@ -45,7 +45,25 @@ void visita_profundidade(struct node_profundidade* node, struct node_profundidad
 
 
 }
-void busca_profundidade(int matriz[TAM][TAM], int tamanho, int raiz, char *nome_arquivo){
+int busca_profundidade(int raiz, char *arquivo_grafo, char *arquivo_destino){
+    //Lendo matriz de adj de um arquivo
+    int tipo, tamanho;
+    FILE *grafo = fopen(arquivo_grafo, "r+");
+
+    if(grafo == NULL){
+        printf("Não foi possivel abrir seu arquivo de grafo.\n");
+        return 0;
+    }
+
+    int matriz_adj[TAM][TAM];
+    inicializar_matriz(matriz_adj);
+    le_matriz_arquivo(grafo, matriz_adj, &tipo, &tamanho);
+
+    //Printando matriz
+    print_matriz(matriz_adj, tamanho);
+
+
+    //AQUI ACABA O TRATAMENTO DA TABELA
     if(logger == 1)
         printf("\n\n| Inicializando Busca em Profundidade |\n\n");
     struct node_profundidade* vertices[tamanho];
@@ -69,16 +87,18 @@ void busca_profundidade(int matriz[TAM][TAM], int tamanho, int raiz, char *nome_
             if(logger == 1){
                 printf("\nVertice que sera visitado primeiro: %d\n", vertices[i] -> vertice);
             }
-            visita_profundidade(vertices[i], vertices ,matriz, tamanho, &tempo);
+            visita_profundidade(vertices[i], vertices ,matriz_adj, tamanho, &tempo);
         }
     }
 
     //Gravando resultados num arquivo texto
-    FILE *f = fopen(nome_arquivo, "r+");
+    FILE *f = fopen(arquivo_destino, "r+");
+    fprintf(f, "Arquivo do grafo: %s\n", arquivo_grafo);
     fprintf(f, "%d\n", raiz);
     for(int k = 0; k < tamanho; k++){
         fprintf(f, "%d %c %d %d\n", vertices[k] -> vertice, vertices[k] -> cor, vertices[k] -> descoberta, vertices[k] -> finalizacao);
     }
+    return 1;
 }
 
 //----------------------------------------------------------------------------------------------------------------------//
