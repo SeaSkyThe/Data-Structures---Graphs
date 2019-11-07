@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <time.h>
+#include <math.h>
 #define TAM 100
+
+
 
 void inicializar_matriz(int matriz[TAM][TAM]);
 void print_matriz(int matriz[TAM][TAM], int tamanho);
@@ -26,10 +30,16 @@ void inicializar_matriz(int matriz[TAM][TAM]){
 }
 void print_matriz(int matriz[TAM][TAM], int tamanho){
     //Printando matriz
-    printf("MATRIZ DE ADJACENCIA:\n");
+    printf("MATRIZ DE ADJACENCIA:\n\n");
+    printf("  ");
+    for(int i = 0; i < tamanho; i++)
+        printf(" %d", i);
+    printf("\n\n");
+
     for(int i = 0; i < tamanho; i++){
+        printf("%d ", i);
         for(int j = 0; j < tamanho; j++){
-            printf("%d ", matriz[i][j]);
+            printf(" %d", matriz[i][j]);
         }
         printf("\n");
     }
