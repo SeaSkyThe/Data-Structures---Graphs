@@ -3,7 +3,7 @@
 #include "matrizAdjacencia.h"
 
 int logger = 1;
-
+char arquivo_log[100] = "arquivos/log_profundidade.log";
 
 //ASSINATURAS
 void gerar_tabela_profundidade(int matriz[TAM][TAM]);
@@ -29,14 +29,18 @@ void visita_profundidade(struct node_profundidade* node, struct node_profundidad
     *tempo = *tempo + 1; //atualizando o tempo
     node -> descoberta = *tempo; //atualizando o tempo de descoberta
     if(logger){
-        printf("\nTempo de descoberta de %d: %d\n", node -> vertice, node -> descoberta);
+        log_print(arquivo_log, "buscas.h - Linha 35","\n  DESCOBERTA DE %d: %d", node -> vertice, node -> descoberta);
+        printf("\nDESCOBERTA DE %d: %d\n", node -> vertice, node -> descoberta);
+        //clearScreen();
     }
     //para cada vertice adjacente
     for(int i = 0; i < tamanho; i++){
         if(matriz[node -> vertice][i] != 0){ //SE FOR ADJACENTE AO VERTICE I
             if(vertices[i] -> cor == 'B'){ // E SE O VERTICE AO QUAL É ADJACENTE FOR BRANCO
-                if(logger)
-                    printf("\n\nA partir de %d visitando: %d\n", node->vertice, i);
+                if(logger){
+                    log_print(arquivo_log, "buscas.h - Linha 35" ,"\n\n  A partir de %d visitando: %d\n\n", node->vertice, i);
+                    printf("\nA partir de %d visitando: %d\n", node->vertice, i);
+                }
                 visita_profundidade(vertices[i], vertices, matriz, tamanho, tempo);
             }
         }
@@ -44,8 +48,11 @@ void visita_profundidade(struct node_profundidade* node, struct node_profundidad
     node -> cor = 'P';
     *tempo = *tempo + 1;
     node -> finalizacao = *tempo;
-    if(logger)
-        printf("\nTempo de finalizacao de %d: %d\n", node -> vertice, node -> finalizacao);
+    if(logger){
+        log_print(arquivo_log, "buscas.h - Linha 35", "\n\n  FINALIZAÇÃO DE %d: %d\n", node -> vertice, node -> finalizacao);
+        printf("\nFINALIZAÇÃO DE %d: %d\n", node -> vertice, node -> finalizacao);
+    }
+
 
 
 }
@@ -55,6 +62,8 @@ int busca_profundidade(int raiz, char *arquivo_grafo, char *arquivo_destino){
     FILE *grafo = fopen(arquivo_grafo, "r+");
 
     if(grafo == NULL){
+        if(logger)
+            log_print(arquivo_log, arquivo_grafo, "\nNão foi possivel abrir seu arquivo de grafo.\n");
         printf("Não foi possivel abrir seu arquivo de grafo.\n");
         return 0;
     }
@@ -67,16 +76,29 @@ int busca_profundidade(int raiz, char *arquivo_grafo, char *arquivo_destino){
     print_matriz(matriz_adj, tamanho);
 
 
-    //AQUI ACABA O TRATAMENTO DA TABELA
-    if(logger == 1)
+    if(logger){
+        //printando matriz no arquivo de log, e inicializacao da busca em profundidade
+        log_print(arquivo_log, arquivo_grafo, "\n\n MATRIZ ADJACÊNCIA\n");
+        for(int i = 0; i < tamanho; i++){
+            for(int j = 0; j < tamanho; j++){
+                log_print(arquivo_log, "buscas.h - Linha 35", " %d", matriz_adj[i][j]);
+
+            }
+            log_print(arquivo_log, "buscas.h - Linha 35", "\n");
+        }
+
         printf("\n\n| Inicializando Busca em Profundidade |\n\n");
+        log_print(arquivo_log, "buscas.h - Linha 35", "\n | INICIALIZANDO BUSCA EM PROFUNDIDADE |\n");
+    }
+
 
     //Inicializando vertices
     struct node_profundidade* vertices[tamanho];
 
     if(logger == 1){
         printf("Vertice Raiz Inicializado!\n");
-        printf("Inicializando restante dos vértices!\n\n");
+        printf("Inicializando restante dos vertices!\n\n");
+        log_print(arquivo_log, "buscas.h - Linha 35", "\n  Vértice Raiz: %d Inicializado \n  Inicializando restante dos vértices\n\n", raiz);
     }
 
     for(int j = 0; j < tamanho; j++){ //Criando as estruturas e Inicializando o resto dos vertices
@@ -85,8 +107,11 @@ int busca_profundidade(int raiz, char *arquivo_grafo, char *arquivo_destino){
             temp -> vertice = j;
             temp -> cor = 'B';
             vertices[j] = temp;
-            if(logger == 1) //LOG DE PROCESSAMENTO
+            if(logger == 1){
+                log_print(arquivo_log, "buscas.h - Linha 35", "  Vértice Inicializado: %d \n", temp -> vertice);
                 printf("Vertice Inicializado: %d \n", temp -> vertice);
+            }
+
         }
         else{
             struct node_profundidade* node_raiz = (struct node_profundidade*)malloc(sizeof(struct node_profundidade));//variavel que ira armazenar a raiz
@@ -101,9 +126,6 @@ int busca_profundidade(int raiz, char *arquivo_grafo, char *arquivo_destino){
     visita_profundidade(vertices[raiz], vertices ,matriz_adj, tamanho, &tempo);
     for(int i = 0; i < tamanho; i++){
         if(vertices[i] -> cor == 'B' && i != raiz){ //Se a cor do vertice for branca, iremos chamar a funcao de visita a partir dele
-            if(logger == 1){
-                printf("\n\n\nVertice que sera visitado: %d\n", vertices[i] -> vertice);
-            }
             visita_profundidade(vertices[i], vertices ,matriz_adj, tamanho, &tempo);
         }
     }
@@ -112,6 +134,8 @@ int busca_profundidade(int raiz, char *arquivo_grafo, char *arquivo_destino){
     FILE *f = fopen(arquivo_destino, "w+");
     if(f == NULL){
         printf("Não foi possivel realizar a gravação da sua tabela de resultados, por favor tente novamente!\n");
+        if(logger)
+            log_print(arquivo_log, "busca.h - Linha 35", "\n\nTabela gerada não pôde ser gravada, tente novamente\n");
         return 0;
     }
     fprintf(f, "Arquivo do grafo: %s\n", arquivo_grafo);
@@ -120,6 +144,12 @@ int busca_profundidade(int raiz, char *arquivo_grafo, char *arquivo_destino){
     for(int k = 0; k < tamanho; k++){
         fprintf(f, "%6d %7c %8d %14d\n", vertices[k] -> vertice, vertices[k] -> cor, vertices[k] -> descoberta, vertices[k] -> finalizacao);
     }
+    if(logger){
+        log_print(arquivo_log, "busca.h - Linha 35", "\n\n\nTabela gerada gravada com sucesso no arquivo:  %s\n", arquivo_destino);
+        log_print(arquivo_log, "busca.h - Linha 35", "----------------------------------------------------------------------------");
+    }
+
+
     return 1;
 }
 

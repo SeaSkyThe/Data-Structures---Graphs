@@ -1,0 +1,195 @@
+
+
+[Mon Nov 11 16:33:12 2019] [arquivos/log_profundidade.log][Local: arquivos/3.txt] 
+
+
+ MATRIZ ADJACÊNCIA
+ 0 1 0 0 0 0 0 0
+ 0 0 1 0 1 1 0 0
+ 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 1
+ 1 0 0 0 0 1 0 0
+ 0 0 0 0 0 0 1 0
+ 0 0 0 0 0 1 0 1
+ 0 0 0 0 0 0 0 1
+
+ | INICIALIZANDO BUSCA EM PROFUNDIDADE |
+
+  Vértice Raiz: 2 Inicializado 
+  Inicializando restante dos vértices
+
+  Vértice Inicializado: 0 
+  Vértice Inicializado: 1 
+  Vértice Inicializado: 3 
+  Vértice Inicializado: 4 
+  Vértice Inicializado: 5 
+  Vértice Inicializado: 6 
+  Vértice Inicializado: 7 
+
+  DESCOBERTA DE 2: 1
+
+  A partir de 2 visitando: 3
+
+
+  DESCOBERTA DE 3: 2
+
+  A partir de 3 visitando: 7
+
+
+  DESCOBERTA DE 7: 3
+
+  FINALIZAÇÃO DE 7: 4
+
+
+  FINALIZAÇÃO DE 3: 5
+
+
+  A partir de 2 visitando: 6
+
+
+  DESCOBERTA DE 6: 6
+
+  A partir de 6 visitando: 5
+
+
+  DESCOBERTA DE 5: 7
+
+  FINALIZAÇÃO DE 5: 8
+
+
+  FINALIZAÇÃO DE 6: 9
+
+
+  FINALIZAÇÃO DE 2: 10
+
+  DESCOBERTA DE 0: 11
+
+  A partir de 0 visitando: 1
+
+
+  DESCOBERTA DE 1: 12
+
+  A partir de 1 visitando: 4
+
+
+  DESCOBERTA DE 4: 13
+
+  FINALIZAÇÃO DE 4: 14
+
+
+  FINALIZAÇÃO DE 1: 15
+
+
+  FINALIZAÇÃO DE 0: 16
+
+
+
+Tabela gerada gravada com sucesso no arquivo:  arquivos/tabela_profundidade3.txt
+----------------------------------------------------------------------------
+
+[Mon Nov 11 16:33:37 2019] [arquivos/log_profundidade.log][Local: arquivos/2.txt] 
+
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0 0 1 0 0 0
+ 0 0 0 0 1 0 0 0 1 0
+ 0 0 0 0 0 1 0 0 0 0
+ 0 0 0 0 0 0 0 1 1 0
+ 0 0 0 0 0 0 0 0 1 0
+ 0 0 0 0 0 0 1 0 0 0
+ 0 0 1 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 1
+ 1 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 1 0 0
+
+ | INICIALIZANDO BUSCA EM PROFUNDIDADE |
+
+  Vértice Raiz: 0 Inicializado 
+  Inicializando restante dos vértices
+
+  Vértice Inicializado: 1 
+  Vértice Inicializado: 2 
+  Vértice Inicializado: 3 
+  Vértice Inicializado: 4 
+  Vértice Inicializado: 5 
+  Vértice Inicializado: 6 
+  Vértice Inicializado: 7 
+  Vértice Inicializado: 8 
+  Vértice Inicializado: 9 
+
+  DESCOBERTA DE 0: 1
+
+  A partir de 0 visitando: 2
+
+
+  DESCOBERTA DE 2: 2
+
+  A partir de 2 visitando: 5
+
+
+  DESCOBERTA DE 5: 3
+
+  A partir de 5 visitando: 6
+
+
+  DESCOBERTA DE 6: 4
+
+  FINALIZAÇÃO DE 6: 5
+
+
+  FINALIZAÇÃO DE 5: 6
+
+
+  FINALIZAÇÃO DE 2: 7
+
+
+  A partir de 0 visitando: 3
+
+
+  DESCOBERTA DE 3: 8
+
+  A partir de 3 visitando: 7
+
+
+  DESCOBERTA DE 7: 9
+
+  A partir de 7 visitando: 9
+
+
+  DESCOBERTA DE 9: 10
+
+  FINALIZAÇÃO DE 9: 11
+
+
+  FINALIZAÇÃO DE 7: 12
+
+
+  A partir de 3 visitando: 8
+
+
+  DESCOBERTA DE 8: 13
+
+  FINALIZAÇÃO DE 8: 14
+
+
+  FINALIZAÇÃO DE 3: 15
+
+
+  FINALIZAÇÃO DE 0: 16
+
+  DESCOBERTA DE 1: 17
+
+  A partir de 1 visitando: 4
+
+
+  DESCOBERTA DE 4: 18
+
+  FINALIZAÇÃO DE 4: 19
+
+
+  FINALIZAÇÃO DE 1: 20
+
+
+
+Tabela gerada gravada com sucesso no arquivo:  arquivos/tabela_profundidade2.txt
+----------------------------------------------------------------------------

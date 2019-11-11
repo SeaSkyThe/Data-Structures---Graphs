@@ -3,6 +3,8 @@
 #include <unistd.h>
 #include <time.h>
 #include <math.h>
+#include <string.h>
+#include "logger.h"
 #define TAM 100
 
 
@@ -16,8 +18,11 @@ void le_matriz_arquivo(FILE *f, int matriz[TAM][TAM],int *copia_tipo, int *copia
 
 
 void clearScreen(){
-  const char *CLEAR_SCREEN_ANSI = "\e[1;1H\e[2J";
-  write(STDOUT_FILENO, CLEAR_SCREEN_ANSI, 12);
+    char ch;
+    printf("\nAperte ENTER para continuar... ");
+    scanf("%c",&ch);
+    const char *CLEAR_SCREEN_ANSI = "\e[1;1H\e[2J";
+    write(STDOUT_FILENO, CLEAR_SCREEN_ANSI, 12);
 }
 
 void inicializar_matriz(int matriz[TAM][TAM]){
@@ -45,6 +50,7 @@ void print_matriz(int matriz[TAM][TAM], int tamanho){
     }
     printf("\n");
 }
+
 void escreve_matriz_arquivo(FILE *f ,int matriz[TAM][TAM], int tipo, int tamanho){
     //Escrevendo em arquivo
     fprintf(f, "%d\n", tipo);
