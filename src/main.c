@@ -26,7 +26,7 @@ int main(void){
 
     //Testes de buscas.
 
-    busca_profundidade(0, "arquivos/2.txt", "arquivos/tabela_profundidade2.txt"); //primeiro parametro é raiz, segundo parametro é arquivo do grafo e o terceiro o arquivo de saida
-    //busca_largura(0, "arquivos/2.txt", "arquivos/tabela_largura2.txt");
+    //busca_profundidade(0, "arquivos/2.txt", "arquivos/tabela_profundidade2.txt"); //primeiro parametro é raiz, segundo parametro é arquivo do grafo e o terceiro o arquivo de saida
+    busca_largura(0, "arquivos/2.txt", "arquivos/tabela_largura2.txt");
     return 0;
 }
