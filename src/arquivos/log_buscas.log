@@ -1,6 +1,6 @@
 
 
-[Mon Nov 11 18:29:35 2019] [arquivos/log_profundidade.log][Local: arquivos/2.txt]
+[Mon Nov 11 18:29:35 2019] [arquivos/log_buscas.log][Local: arquivos/2.txt]
 
 
  [matrizAdjacencia.h - le_matriz_arquivo() -  Linha 72] [matrizAdjacencia.h - print_matriz() -  Linha 36]:
@@ -110,7 +110,7 @@
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
-[Sat Nov 16 14:55:03 2019] [arquivos/log_profundidade.log][Local: arquivos/2.txt]
+[Sat Nov 16 14:55:03 2019] [arquivos/log_buscas.log][Local: arquivos/2.txt]
 
 
  [matrizAdjacencia.h - le_matriz_arquivo() -  Linha 72] [matrizAdjacencia.h - print_matriz() -  Linha 36]:
@@ -238,4 +238,185 @@
 
 
  [buscas.h - busca_largura() -  Linha 217]: Tabela gerada gravada com sucesso no arquivo:  arquivos/tabela_largura2.txt
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+ [matrizAdjacencia.h - le_matriz_arquivo() -  Linha 72] [matrizAdjacencia.h - print_matriz() -  Linha 36]: 
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+
+ | INICIALIZANDO BUSCA EM PROFUNDIDADE |
+
+  [buscas.h - busca_profundidade() -  Linha 104]:  Vértice Raiz: 0 Inicializado 
+  Inicializando restante dos vértices
+
+  Vértice Inicializado: 1 
+  Vértice Inicializado: 2 
+  Vértice Inicializado: 3 
+  Vértice Inicializado: 4 
+
+  [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 0: 1
+
+  [buscas.h - visita_profundidade() -  Linha 41]:  A partir de 0 visitando: 2
+
+
+  [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 2: 2
+
+  [buscas.h - visita_profundidade() -  Linha 41]:  A partir de 2 visitando: 1
+
+
+  [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 1: 3
+
+  [buscas.h - visita_profundidade() -  Linha 52]:  FINALIZAÇÃO DE 1: 4
+
+
+  [buscas.h - visita_profundidade() -  Linha 52]:  FINALIZAÇÃO DE 2: 5
+
+
+  [buscas.h - visita_profundidade() -  Linha 41]:  A partir de 0 visitando: 3
+
+
+  [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 3: 6
+
+  [buscas.h - visita_profundidade() -  Linha 41]:  A partir de 3 visitando: 4
+
+
+  [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 4: 7
+
+  [buscas.h - visita_profundidade() -  Linha 52]:  FINALIZAÇÃO DE 4: 8
+
+
+  [buscas.h - visita_profundidade() -  Linha 52]:  FINALIZAÇÃO DE 3: 9
+
+
+  [buscas.h - visita_profundidade() -  Linha 52]:  FINALIZAÇÃO DE 0: 10
+
+
+
+ [buscas.h - busca_profundidade() -  Linha 144]: Tabela gerada gravada com sucesso no arquivo:  arquivos/tabela_prfundidade.txt
+------------------------------------------------------------------------------------------------------------------------------------
+
+ [matrizAdjacencia.h - le_matriz_arquivo() -  Linha 72] [matrizAdjacencia.h - print_matriz() -  Linha 36]: 
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+
+ | INICIALIZANDO BUSCA EM PROFUNDIDADE |
+
+  [buscas.h - busca_profundidade() -  Linha 104]:  Vértice Raiz: 0 Inicializado 
+  Inicializando restante dos vértices
+
+  Vértice Inicializado: 1 
+  Vértice Inicializado: 2 
+  Vértice Inicializado: 3 
+  Vértice Inicializado: 4 
+
+  [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 0: 1
+
+  [buscas.h - visita_profundidade() -  Linha 41]:  A partir de 0 visitando: 2
+
+
+  [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 2: 2
+
+  [buscas.h - visita_profundidade() -  Linha 41]:  A partir de 2 visitando: 1
+
+
+  [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 1: 3
+
+  [buscas.h - visita_profundidade() -  Linha 52]:  FINALIZAÇÃO DE 1: 4
+
+
+  [buscas.h - visita_profundidade() -  Linha 52]:  FINALIZAÇÃO DE 2: 5
+
+
+  [buscas.h - visita_profundidade() -  Linha 41]:  A partir de 0 visitando: 3
+
+
+  [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 3: 6
+
+  [buscas.h - visita_profundidade() -  Linha 41]:  A partir de 3 visitando: 4
+
+
+  [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 4: 7
+
+  [buscas.h - visita_profundidade() -  Linha 52]:  FINALIZAÇÃO DE 4: 8
+
+
+  [buscas.h - visita_profundidade() -  Linha 52]:  FINALIZAÇÃO DE 3: 9
+
+
+  [buscas.h - visita_profundidade() -  Linha 52]:  FINALIZAÇÃO DE 0: 10
+
+
+
+ [buscas.h - busca_profundidade() -  Linha 144]: Tabela gerada gravada com sucesso no arquivo:  arquivos/tabela_profundidade.txt
+------------------------------------------------------------------------------------------------------------------------------------
+
+ [matrizAdjacencia.h - le_matriz_arquivo() -  Linha 72] [matrizAdjacencia.h - print_matriz() -  Linha 36]: 
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+
+ | INICIALIZANDO BUSCA EM PROFUNDIDADE |
+
+  [buscas.h - busca_profundidade() -  Linha 104]:  Vértice Raiz: 0 Inicializado 
+  Inicializando restante dos vértices
+
+  Vértice Inicializado: 1 
+  Vértice Inicializado: 2 
+  Vértice Inicializado: 3 
+  Vértice Inicializado: 4 
+
+  [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 0: 1
+
+  [buscas.h - visita_profundidade() -  Linha 41]:  A partir de 0 visitando: 2
+
+
+  [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 2: 2
+
+  [buscas.h - visita_profundidade() -  Linha 41]:  A partir de 2 visitando: 1
+
+
+  [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 1: 3
+
+  [buscas.h - visita_profundidade() -  Linha 52]:  FINALIZAÇÃO DE 1: 4
+
+
+  [buscas.h - visita_profundidade() -  Linha 52]:  FINALIZAÇÃO DE 2: 5
+
+
+  [buscas.h - visita_profundidade() -  Linha 41]:  A partir de 0 visitando: 3
+
+
+  [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 3: 6
+
+  [buscas.h - visita_profundidade() -  Linha 41]:  A partir de 3 visitando: 4
+
+
+  [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 4: 7
+
+  [buscas.h - visita_profundidade() -  Linha 52]:  FINALIZAÇÃO DE 4: 8
+
+
+  [buscas.h - visita_profundidade() -  Linha 52]:  FINALIZAÇÃO DE 3: 9
+
+
+  [buscas.h - visita_profundidade() -  Linha 52]:  FINALIZAÇÃO DE 0: 10
+
+
+
+ [buscas.h - busca_profundidade() -  Linha 144]: Tabela gerada gravada com sucesso no arquivo:  arquivos/tabela_profundidade1.txt
 ------------------------------------------------------------------------------------------------------------------------------------

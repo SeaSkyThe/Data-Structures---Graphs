@@ -6,6 +6,7 @@
 static int SESSION_TRACKER;
 int flag = 1;
 
+//LOGGER SÓ FUNCIONA COM 1 ARGUMENTO NO PRINT
 char* print_time(){
     int size = 0;
     time_t t;

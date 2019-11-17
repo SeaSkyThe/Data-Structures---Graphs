@@ -1,4 +1,4 @@
-Arquivo do grafo: arquivos/1.txt
+Arquivo do grafo: arquivos/1.grafo
 RAIZ: 0
 
 | VERTICE | COR | DESCOBERTA | FINALIZAÇÃO |
