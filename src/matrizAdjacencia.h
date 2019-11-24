@@ -7,7 +7,7 @@
 #include "logger.h"
 #define TAM 100
 char *arquivo_log_matrizes = "arquivos/log_matrizes.log";
-int logger = 1;
+int logger = 0;
 
 
 // void inicializar_matriz(int matriz[TAM][TAM]);
@@ -33,13 +33,13 @@ void print_matriz(int matriz[TAM][TAM], int tamanho){
     //printf("MATRIZ DE ADJACENCIA:\n\n");
     printf("  ");
     for(int i = 0; i < tamanho; i++)
-        printf(" %d", i);
+        printf("  %2d", i);
     printf("\n\n");
 
     for(int i = 0; i < tamanho; i++){
         printf("%d ", i);
         for(int j = 0; j < tamanho; j++){
-            printf(" %d", matriz[i][j]);
+            printf(" %3d", matriz[i][j]);
         }
         printf("\n");
     }
@@ -108,13 +108,32 @@ void le_matriz_arquivo(FILE *f, int matriz[TAM][TAM],int *copia_tipo, int *copia
 
         if(peso == 0){
             matriz[vertice_saida][vertice_chegada] += 1;
+            if(tipo == 0){
+                matriz[vertice_chegada][vertice_saida] += 1;
+            }
         }
         else{
             matriz[vertice_saida][vertice_chegada] += peso;
+            if(tipo == 0){
+                matriz[vertice_chegada][vertice_saida] += peso;
+            }
         }
     }
     print_matriz(matriz, tamanho);
     printf("\n");
     *copia_tipo = tipo;
     *copia_tamanho = tamanho;
+}
+
+
+int numArestas(int matriz_adj[TAM][TAM], int tamanho){
+    int numArestas = 0;
+    for(int j = 0; j < tamanho; j++){
+        for(int i = 0; i < tamanho; i++){
+            if(matriz_adj[j][i] != 0){
+                numArestas++;
+            }
+        }
+    }
+    return numArestas;
 }

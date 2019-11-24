@@ -1,0 +1,17 @@
+RAIZ: 0
+
+| VERTICE | DISTANCIA | PAI |
+
+    0          0         -1
+    1          8          3
+    2          9          1
+    3          5          0
+    4          7          3
+
+CAMINHOS: 
+
+Caminho ate 0: 0 
+Caminho ate 1: 0 3 1 
+Caminho ate 2: 0 3 1 2 
+Caminho ate 3: 0 3 
+Caminho ate 4: 0 3 4 

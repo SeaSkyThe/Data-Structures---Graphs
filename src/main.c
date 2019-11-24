@@ -71,6 +71,8 @@ int main(void){
     printf(" 4 - Modificar Grafo \n");
     printf(" 5 - Busca em Profundidade \n");
     printf(" 6 - Busca em Largura \n");
+    printf(" 7 - Aplicar Dijkstra \n");
+    printf(" 8 - Aplicar Bellman-Ford \n");
     printf(" 0 - Sair \n");
 
 
@@ -86,6 +88,7 @@ int main(void){
         {
             printf("\n\nDigite o caminho do arquivo do seu grafo: ");
             scanf("%s", caminho);
+            printf("\n");
 
             f = fopen(caminho, "r");
 
@@ -207,7 +210,7 @@ int main(void){
 
                     case 2:
                     {
-                        mensagem = "Por favor, escolha entao outro nome de arquivo de saida... Pressione ENTER para voltar ao MENU...\n";
+                        mensagem = "\nPor favor, escolha entao outro nome de arquivo de saida... Pressione ENTER para voltar ao MENU...\n";
                         clearScreen(mensagem);
                     }
 
@@ -227,16 +230,106 @@ int main(void){
 
         case 6:
         {
-            
+            // busca_largura(0, "arquivos/4.grafo", "arquivos/tabela_grafo4.tbl");
         }
+
+
+        case 7:
+        {
+            printf("O algoritmo de Dijkstra sera aplicado no grafo previamente carregado pela opção '1' do MENU\n Caso nenhum grafo tenha sido carregado, o resultado pode ser indesejado.\n");
+            printf("\nAqui está o grafo carregado: \n\n");
+            print_matriz(matriz_adj, tamanho);
+
+            int op_dij;
+            printf("Deseja aplicar o algoritmo nesse grafo? \n");
+            printf("1 - SIM\n");
+            printf("2 - NAO\n");
+            printf("Escolha: ");
+            scanf("%d", &op_dij);
+            printf("\n");
+            switch (op_dij) {
+                case 1:
+                {
+                    int raiz_dijkstra;
+
+                    printf("Escolha uma raiz para iniciarmos o algoritmo: ");
+                    scanf("%d", &raiz_dijkstra);
+
+                    char destino_dijkstra[2*TAM];
+                    printf("Digite o caminho do arquivo para salvar os resultados: ");
+                    scanf("%s", destino_dijkstra);
+
+                    dijkstra(matriz_adj, raiz_dijkstra, tamanho, destino_dijkstra);
+
+                    mensagem = "\nPressione ENTER para voltar ao MENU...";
+                    clearScreen(mensagem);
+                    goto inicio;
+                }
+
+                case 2:
+                {
+                    mensagem = "\nPor favor, carregue entao um outro grafo antes de tentar novamente... Pressione ENTER para voltar ao MENU...\n";
+                    clearScreen(mensagem);
+                }
+
+                default:
+                    goto inicio;
+            }
+
+
+        }
+
+        case 8:
+        {
+            printf("O algoritmo de Bellman-Ford sera aplicado no grafo previamente carregado pela opção '1' do MENU\n Caso nenhum grafo tenha sido carregado, o resultado pode ser indesejado.\n");
+            printf("\nAqui está o grafo carregado: \n\n");
+            print_matriz(matriz_adj, tamanho);
+
+            int op_bel;
+            printf("Deseja aplicar o algoritmo nesse grafo? \n");
+            printf("1 - SIM\n");
+            printf("2 - NAO\n");
+            printf("Escolha: ");
+            scanf("%d", &op_bel);
+            printf("\n");
+            switch (op_bel) {
+                case 1:
+                {
+                    int raiz_bellman;
+
+                    printf("Escolha uma raiz para iniciarmos o algoritmo: ");
+                    scanf("%d", &raiz_bellman);
+
+                    char destino_bellman[2*TAM];
+                    printf("Digite o caminho do arquivo para salvar os resultados: ");
+                    scanf("%s", destino_bellman);
+
+                    bellman_ford(matriz_adj, raiz_bellman, tamanho, destino_bellman);
+
+                    mensagem = "\nPressione ENTER para voltar ao MENU...";
+                    clearScreen(mensagem);
+                    goto inicio;
+                }
+
+                case 2:
+                {
+                    mensagem = "\nPor favor, carregue entao um outro grafo antes de tentar novamente... Pressione ENTER para voltar ao MENU...\n";
+                    clearScreen(mensagem);
+                }
+
+                default:
+                    goto inicio;
+            }
+
+
+        }
+
         default:
         {
             mensagem = "\nPor favor, escolha uma opcao valida...\n";
             clearScreen(mensagem);
             goto inicio;
         }
-
-
     }
     return 0;
 }
