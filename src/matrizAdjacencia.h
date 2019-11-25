@@ -126,7 +126,7 @@ void le_matriz_arquivo(FILE *f, int matriz[TAM][TAM],int *copia_tipo, int *copia
 }
 
 
-int numArestas(int matriz_adj[TAM][TAM], int tamanho){
+int numArestas(int matriz_adj[TAM][TAM], int tamanho, int tipo){
     int numArestas = 0;
     for(int j = 0; j < tamanho; j++){
         for(int i = 0; i < tamanho; i++){
@@ -135,5 +135,7 @@ int numArestas(int matriz_adj[TAM][TAM], int tamanho){
             }
         }
     }
+    if(tipo == 0)
+        return (numArestas/2);
     return numArestas;
 }

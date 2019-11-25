@@ -88,6 +88,7 @@ int main(void){
         {
             printf("\n\nDigite o caminho do arquivo do seu grafo: ");
             scanf("%s", caminho);
+            //strcpy(caminho, "arquivos/8.grafo");
             printf("\n");
 
             f = fopen(caminho, "r");
@@ -259,6 +260,7 @@ int main(void){
                     printf("Digite o caminho do arquivo para salvar os resultados: ");
                     scanf("%s", destino_dijkstra);
 
+
                     dijkstra(matriz_adj, raiz_dijkstra, tamanho, destino_dijkstra);
 
                     mensagem = "\nPressione ENTER para voltar ao MENU...";
@@ -303,8 +305,8 @@ int main(void){
                     char destino_bellman[2*TAM];
                     printf("Digite o caminho do arquivo para salvar os resultados: ");
                     scanf("%s", destino_bellman);
-
-                    bellman_ford(matriz_adj, raiz_bellman, tamanho, destino_bellman);
+                    //strcpy(destino_bellman, "arquivos/8.bellman");
+                    bellman_ford(matriz_adj, raiz_bellman, tamanho, tipo, destino_bellman);
 
                     mensagem = "\nPressione ENTER para voltar ao MENU...";
                     clearScreen(mensagem);

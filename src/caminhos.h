@@ -112,9 +112,9 @@ int dijkstra(int matriz_adj[TAM][TAM], int raiz, int tamanho, char *arquivo_dest
 //-----------------------------------------------------------------------------------------------------------------------------------------//
 
 
-int bellman_ford(int matriz_adj[TAM][TAM], int raiz, int tamanho, char *arquivo_destino){
+int bellman_ford(int matriz_adj[TAM][TAM], int raiz, int tamanho, int tipo, char *arquivo_destino){
     int num_v = tamanho; //numero de vertices
-    int num_a = numArestas(matriz_adj, tamanho); //num de arestas
+    int num_a = numArestas(matriz_adj, tamanho, tipo); //num de arestas
     struct node_largura* vertices[tamanho];  //array que guarda os vertices
     for(int i = 0; i < tamanho; i ++){
         //inicializando vertices
@@ -132,27 +132,48 @@ int bellman_ford(int matriz_adj[TAM][TAM], int raiz, int tamanho, char *arquivo_
             vertices[i] = temp;
         }
     }
+
+
     //guardando arestas num array
     struct aresta* arestas[num_a];
+
+
+    //preenchendo vetor de arestas
     int count = 0;
+    int existe_aresta = 0;
     for(int i = 0; i < tamanho; i++){
         for(int j = 0; j < tamanho; j++){
             struct aresta* temp = (struct aresta*)malloc(sizeof(struct aresta));
-            if(matriz_adj[i][j] != 0){
-                temp -> saida = i;
-                temp -> destino = j;
-                temp -> peso = matriz_adj[i][j];
-                arestas[count] = temp;
-                count++;
+            if(tipo == 0){
+
+                if(matriz_adj[i][j] != 0 && j > i){  //verifica se esta acima da diagonal superior da matriz de adj, para nao pegar arestas duplicadas
+                    temp -> saida = i;
+                    temp -> destino = j;
+                    temp -> peso = matriz_adj[i][j];
+                    arestas[count] = temp;
+                    count++;
+                }
             }
+            else{
+                if(matriz_adj[i][j] != 0){
+                    temp -> saida = i;
+                    temp -> destino = j;
+                    temp -> peso = matriz_adj[i][j];
+                    arestas[count] = temp;
+                    count++;
+                }
+            }
+
+
         }
     }
+
     printf("ARESTAS:\n");
-    for(int k = 0; k < num_a; k++){
-        printf("SAIDA: %d  CHEGADA: %d  PESO: %d\n", arestas[k] -> saida, arestas[k] -> destino, arestas[k] -> peso);
+    for(int i = 0; i < num_a; i++){
+        printf("%d : SAIDA: %d  CHEGADA: %d  PESO: %d\n", i, arestas[i] -> saida, arestas[i] -> destino, arestas[i] -> peso);
     }
     //relaxa todas as arestas 'num_v - 1' vezes
-    for(int i = 0; i <= num_v - 1; i++){
+    for(int i = 1; i <= num_v - 1; i++){
         for(int j = 0; j < num_a; j++){
             int u = arestas[j] -> saida;
             int v = arestas[j] -> destino;
@@ -165,7 +186,7 @@ int bellman_ford(int matriz_adj[TAM][TAM], int raiz, int tamanho, char *arquivo_
     }
 
     //refaz para verificar se existem ciclos de peso negativo
-    for(int i = 1; i <= num_a; i++){
+    for(int i = 0; i < num_a; i++){
         int u = arestas[i] -> saida;
         int v = arestas[i] -> destino;
         int peso = arestas[i] -> peso;
@@ -173,7 +194,6 @@ int bellman_ford(int matriz_adj[TAM][TAM], int raiz, int tamanho, char *arquivo_
             return 0;
         }
     }
-
 
     //Gravando resultados num arquivo texto
     FILE *f = fopen(arquivo_destino, "w+");
