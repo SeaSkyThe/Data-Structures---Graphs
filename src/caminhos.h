@@ -212,7 +212,7 @@ int bellman_ford(int matriz_adj[TAM][TAM], int raiz, int tamanho, int tipo, char
         int v = arestas[i] -> destino;
         int peso = arestas[i] -> peso;
         if(vertices[u] -> distancia != 999 && vertices[u] -> distancia + peso < vertices[v] -> distancia){
-            return 0;
+            return 1;
         }
     }
 
@@ -239,6 +239,6 @@ int bellman_ford(int matriz_adj[TAM][TAM], int raiz, int tamanho, int tipo, char
     printf("\n\n");
 
     fclose(f);
-    return 1;
+    return 0;
 
 }

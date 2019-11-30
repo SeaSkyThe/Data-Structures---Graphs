@@ -339,7 +339,7 @@ int main(void){
                 case 1:
                 {
                     int raiz_bellman;
-
+                    int ciclo_peso_neg;
                     printf("Escolha uma raiz para iniciarmos o algoritmo: ");
                     scanf("%d", &raiz_bellman);
 
@@ -347,8 +347,11 @@ int main(void){
                     printf("Digite o caminho do arquivo para salvar os resultados: ");
                     scanf("%s", destino_bellman);
                     //strcpy(destino_bellman, "arquivos/8.bellman");
-                    bellman_ford(matriz_adj, raiz_bellman, tamanho, tipo, destino_bellman);
+                    ciclo_peso_neg = bellman_ford(matriz_adj, raiz_bellman, tamanho, tipo, destino_bellman);
 
+                    if(ciclo_peso_neg){
+                        printf("\nO grafo inserido tem um ciclo de peso negativo\n");
+                    }
                     mensagem = "\nPressione ENTER para voltar ao MENU...";
                     clearScreen(mensagem);
                     goto inicio;
