@@ -125,7 +125,8 @@ int busca_profundidade(int raiz, char *arquivo_grafo, char *arquivo_destino){
     int tempo = 0;
     visita_profundidade(vertices[raiz], vertices ,matriz_adj, tamanho, &tempo);
     for(int i = 0; i < tamanho; i++){
-        if(vertices[i] -> cor == 'B' && i != raiz){ //Se a cor do vertice for branca, iremos chamar a funcao de visita a partir dele
+        if(vertices[i] -> cor == 'B' && i != raiz){ //Se a cor do vertice for branca,
+                                                    //iremos chamar a funcao de visita a partir dele
             visita_profundidade(vertices[i], vertices ,matriz_adj, tamanho, &tempo);
         }
     }

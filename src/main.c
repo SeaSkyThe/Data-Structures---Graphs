@@ -231,7 +231,48 @@ int main(void){
 
         case 6:
         {
-            // busca_largura(0, "arquivos/4.grafo", "arquivos/tabela_grafo4.tbl");
+            int flag;
+            char entrada[2*TAM];
+            char saida[2*TAM];
+            int raiz;
+            printf("Por favor digite o caminho do arquivo de grafo no qual sera feita a busca em largura: ");
+            scanf("%s", entrada);
+            printf("\nPor favor, agora digite o caminho do arquivo onde será salvo o resultado da busca: ");
+            scanf("%s", saida);
+            if(fileexists(saida)){
+                int flag;
+                printf("O arquivo de saida já existe, deseja sobreescrever? \n");
+                printf("1 - Sim\n");
+                printf("2 - Nao\n");
+                scanf("%d", &flag);
+                switch (flag) {
+                    case 1:
+                    {
+                        printf("\nDigite a raiz para essa busca: ");
+                        scanf("%d", &raiz);
+                        busca_largura(raiz, entrada, saida);
+                        mensagem = "Busca feita com sucesso!\n";
+                        clearScreen(mensagem);
+                        goto inicio;
+                    }
+
+                    case 2:
+                    {
+                        mensagem = "\nPor favor, escolha entao outro nome de arquivo de saida... Pressione ENTER para voltar ao MENU...\n";
+                        clearScreen(mensagem);
+                    }
+
+                    default:
+                        goto inicio;
+                }
+
+            }
+            printf("\nDigite a raiz para essa busca: ");
+            scanf("%d", &raiz);
+            busca_largura(raiz, entrada, saida);
+            mensagem = "Busca feita com sucesso!\n";
+            clearScreen(mensagem);
+            goto inicio;
         }
 
 

@@ -1,4 +1,5 @@
 #include "buscas.h"
+char* arquivo_log_caminhos = "arquivos/log_caminhos.log";
 
 struct aresta{
     int saida, destino, peso;
@@ -43,6 +44,9 @@ int dijkstra(int matriz_adj[TAM][TAM], int raiz, int tamanho, char *arquivo_dest
     int S[tamanho]; //array que ira ser "true" caso vertice ja tenha sido usado no caminho e "false" caso não
     for(int i = 0; i < tamanho; i ++){
         //inicializando vertices
+        if(logger){
+            log_print(arquivo_log_caminhos, "caminhos.h - dijkstra - linha 45", "\n  [caminhos.h - dijkstra() -  Linha 45]:  INICIALIZANDO VERTICE: %d", i);
+        }
         struct node_largura *temp = (struct node_largura*)malloc(sizeof(struct node_largura));
         if(i != raiz){
             temp -> vertice = i;
@@ -63,10 +67,19 @@ int dijkstra(int matriz_adj[TAM][TAM], int raiz, int tamanho, char *arquivo_dest
     for(int k = 0; k < tamanho; k++){
         int u = distanciaMin(vertices, S, tamanho);  //pega o vertice de menor distancia do array de vertices não processados
         S[u] = 1; //depois de ser pego, marcamos como utilizado no array S[]
+        if(logger){
+            log_print(arquivo_log_caminhos, "caminhos.h - dijkstra - linha 68", "\n  [caminhos.h - dijkstra() -  Linha 68]:  PEGANDO VERTICE DE MENOR DISTANCIA NÃO PROCESSADO: %d", u);
+        }
         //relaxa
+        if(logger){
+            log_print(arquivo_log_caminhos, "caminhos.h - dijkstra - linha 73", "\n  [caminhos.h - dijkstra() -  Linha 73]:  INICIANDO RELAXAMENTOS\n");
+        }
         for(int v = 0; v < tamanho; v++){
             //atualiza a distancia do vertice v, se existe uma aresta entre 'u' e 'v', e se o peso total
             //do caminho da raiz para o v for menor que a distancia atual de v
+            if(logger && matriz_adj[u][v]){
+                log_print(arquivo_log_caminhos, "caminhos.h - dijkstra - linha 77", "\n  [caminhos.h - dijkstra() -  Linha 77]:  VERIFICANDO SE O VERTICE %d ADJACENTE NECESSITA DE RELAXAMENTO", v);
+            }
             if(matriz_adj[u][v] && (vertices[u] -> distancia + matriz_adj[u][v]) < vertices[v] -> distancia){
                 vertices[v] -> distancia = (vertices[u] -> distancia) + matriz_adj[u][v];
                 vertices[v] -> pai = u;
@@ -117,6 +130,9 @@ int bellman_ford(int matriz_adj[TAM][TAM], int raiz, int tamanho, int tipo, char
     int num_a = numArestas(matriz_adj, tamanho, tipo); //num de arestas
     struct node_largura* vertices[tamanho];  //array que guarda os vertices
     for(int i = 0; i < tamanho; i ++){
+        if(logger){
+            log_print(arquivo_log_caminhos, "caminhos.h - bellman_ford - linha 128", "\n  [caminhos.h - bellman_ford() -  Linha 128]:  INICIALIZANDO VERTICE: %d", i);
+        }
         //inicializando vertices
         struct node_largura *temp = (struct node_largura*)malloc(sizeof(struct node_largura));
         if(i != raiz){
@@ -145,7 +161,6 @@ int bellman_ford(int matriz_adj[TAM][TAM], int raiz, int tamanho, int tipo, char
         for(int j = 0; j < tamanho; j++){
             struct aresta* temp = (struct aresta*)malloc(sizeof(struct aresta));
             if(tipo == 0){
-
                 if(matriz_adj[i][j] != 0 && j > i){  //verifica se esta acima da diagonal superior da matriz de adj, para nao pegar arestas duplicadas
                     temp -> saida = i;
                     temp -> destino = j;
@@ -173,18 +188,24 @@ int bellman_ford(int matriz_adj[TAM][TAM], int raiz, int tamanho, int tipo, char
         printf("%d : SAIDA: %d  CHEGADA: %d  PESO: %d\n", i, arestas[i] -> saida, arestas[i] -> destino, arestas[i] -> peso);
     }
     //relaxa todas as arestas 'num_v - 1' vezes
+    if(logger){
+        log_print(arquivo_log_caminhos, "caminhos.h - bellman_ford - linha 192", "\n  [caminhos.h - bellman_ford() -  Linha 192]:  RELAXANDO TODAS AS ARESTAS |V| - 1 vezes");
+    }
     for(int i = 1; i <= num_v - 1; i++){
         for(int j = 0; j < num_a; j++){
             int u = arestas[j] -> saida;
             int v = arestas[j] -> destino;
             int peso = arestas[j] -> peso;
-            if(vertices[u] -> distancia + peso < vertices[v] -> distancia){
+            if(vertices[u] -> distancia + peso < vertices[v] -> distancia){ //relaxa
                 vertices[v] -> distancia = vertices[u] -> distancia + peso;
                 vertices[v] -> pai = u;
             }
         }
     }
 
+    if(logger){
+        log_print(arquivo_log_caminhos, "caminhos.h - bellman_ford - linha 209", "\n  [caminhos.h - bellman_ford() -  Linha 209]:  VERIFICAÇÃO DE CICLOS NEGATIVOS");
+    }
     //refaz para verificar se existem ciclos de peso negativo
     for(int i = 0; i < num_a; i++){
         int u = arestas[i] -> saida;
