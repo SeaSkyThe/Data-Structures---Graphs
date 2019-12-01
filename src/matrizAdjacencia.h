@@ -7,7 +7,7 @@
 #include "logger.h"
 #define TAM 100
 char *arquivo_log_matrizes = "arquivos/log_matrizes.log";
-int logger = 0;
+int logger = 1;
 
 
 // void inicializar_matriz(int matriz[TAM][TAM]);

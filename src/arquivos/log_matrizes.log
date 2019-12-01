@@ -1,0 +1,525 @@
+
+
+[Sun Dec  1 12:46:17 2019] [arquivos/log_matrizes.log][Local: matrizAdjacencia.h - linha 79]
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]:
+    Lendo o tipo e o tamanho do grafo!
+    TIPO: 1 | TAMANHO: 5
+
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]: Lendo vértices de saída e chegada, e seu peso:
+
+  SAIDA: 0 | CHEGADA: 2 | PESO: 0
+
+
+  SAIDA: 0 | CHEGADA: 3 | PESO: 0
+
+
+  SAIDA: 1 | CHEGADA: 0 | PESO: 0
+
+
+  SAIDA: 2 | CHEGADA: 1 | PESO: 0
+
+
+  SAIDA: 3 | CHEGADA: 4 | PESO: 0
+
+
+  SAIDA: 4 | CHEGADA: 0 | PESO: 0
+
+
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+[Sun Dec  1 12:49:13 2019] [arquivos/log_matrizes.log][Local: matrizAdjacencia.h - linha 79]
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]:
+    Lendo o tipo e o tamanho do grafo!
+    TIPO: 1 | TAMANHO: 5
+
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]: Lendo vértices de saída e chegada, e seu peso:
+
+  SAIDA: 0 | CHEGADA: 2 | PESO: 0
+
+
+  SAIDA: 0 | CHEGADA: 3 | PESO: 0
+
+
+  SAIDA: 1 | CHEGADA: 0 | PESO: 0
+
+
+  SAIDA: 2 | CHEGADA: 1 | PESO: 0
+
+
+  SAIDA: 3 | CHEGADA: 4 | PESO: 0
+
+
+  SAIDA: 4 | CHEGADA: 0 | PESO: 0
+
+
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+[Sun Dec  1 12:51:33 2019] [arquivos/log_matrizes.log][Local: matrizAdjacencia.h - linha 79]
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]:
+    Lendo o tipo e o tamanho do grafo!
+    TIPO: 1 | TAMANHO: 5
+
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]: Lendo vértices de saída e chegada, e seu peso:
+
+  SAIDA: 0 | CHEGADA: 2 | PESO: 0
+
+
+  SAIDA: 0 | CHEGADA: 3 | PESO: 0
+
+
+  SAIDA: 1 | CHEGADA: 0 | PESO: 0
+
+
+  SAIDA: 2 | CHEGADA: 1 | PESO: 0
+
+
+  SAIDA: 3 | CHEGADA: 4 | PESO: 0
+
+
+  SAIDA: 4 | CHEGADA: 0 | PESO: 0
+
+
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+[Sun Dec  1 12:53:54 2019] [arquivos/log_matrizes.log][Local: matrizAdjacencia.h - linha 79]
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]:
+    Lendo o tipo e o tamanho do grafo!
+    TIPO: 1 | TAMANHO: 5
+
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]: Lendo vértices de saída e chegada, e seu peso:
+
+  SAIDA: 0 | CHEGADA: 2 | PESO: 0
+
+
+  SAIDA: 0 | CHEGADA: 3 | PESO: 0
+
+
+  SAIDA: 1 | CHEGADA: 0 | PESO: 0
+
+
+  SAIDA: 2 | CHEGADA: 1 | PESO: 0
+
+
+  SAIDA: 3 | CHEGADA: 4 | PESO: 0
+
+
+  SAIDA: 4 | CHEGADA: 0 | PESO: 0
+
+
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+[Sun Dec  1 12:54:50 2019] [arquivos/log_matrizes.log][Local: matrizAdjacencia.h - linha 79]
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]:
+    Lendo o tipo e o tamanho do grafo!
+    TIPO: 1 | TAMANHO: 5
+
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]: Lendo vértices de saída e chegada, e seu peso:
+
+  SAIDA: 0 | CHEGADA: 2 | PESO: 0
+
+
+  SAIDA: 0 | CHEGADA: 3 | PESO: 0
+
+
+  SAIDA: 1 | CHEGADA: 0 | PESO: 0
+
+
+  SAIDA: 2 | CHEGADA: 1 | PESO: 0
+
+
+  SAIDA: 3 | CHEGADA: 4 | PESO: 0
+
+
+  SAIDA: 4 | CHEGADA: 0 | PESO: 0
+
+
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+[Sun Dec  1 13:00:19 2019] [arquivos/log_matrizes.log][Local: matrizAdjacencia.h - linha 79]
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]:
+    Lendo o tipo e o tamanho do grafo!
+    TIPO: 1 | TAMANHO: 5
+
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]: Lendo vértices de saída e chegada, e seu peso:
+
+  SAIDA: 0 | CHEGADA: 2 | PESO: 0
+
+
+  SAIDA: 0 | CHEGADA: 3 | PESO: 0
+
+
+  SAIDA: 1 | CHEGADA: 0 | PESO: 0
+
+
+  SAIDA: 2 | CHEGADA: 1 | PESO: 0
+
+
+  SAIDA: 3 | CHEGADA: 4 | PESO: 0
+
+
+  SAIDA: 4 | CHEGADA: 0 | PESO: 0
+
+
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+[Sun Dec  1 13:02:32 2019] [arquivos/log_matrizes.log][Local: matrizAdjacencia.h - linha 79]
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]:
+    Lendo o tipo e o tamanho do grafo!
+    TIPO: 1 | TAMANHO: 5
+
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]: Lendo vértices de saída e chegada, e seu peso:
+
+  SAIDA: 0 | CHEGADA: 2 | PESO: 0
+
+
+  SAIDA: 0 | CHEGADA: 3 | PESO: 0
+
+
+  SAIDA: 1 | CHEGADA: 0 | PESO: 0
+
+
+  SAIDA: 2 | CHEGADA: 1 | PESO: 0
+
+
+  SAIDA: 3 | CHEGADA: 4 | PESO: 0
+
+
+  SAIDA: 4 | CHEGADA: 0 | PESO: 0
+
+
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+[Sun Dec  1 13:04:09 2019] [arquivos/log_matrizes.log][Local: matrizAdjacencia.h - linha 79]
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]:
+    Lendo o tipo e o tamanho do grafo!
+    TIPO: 1 | TAMANHO: 5
+
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]: Lendo vértices de saída e chegada, e seu peso:
+
+  SAIDA: 0 | CHEGADA: 2 | PESO: 0
+
+
+  SAIDA: 0 | CHEGADA: 3 | PESO: 0
+
+
+  SAIDA: 1 | CHEGADA: 0 | PESO: 0
+
+
+  SAIDA: 2 | CHEGADA: 1 | PESO: 0
+
+
+  SAIDA: 3 | CHEGADA: 4 | PESO: 0
+
+
+  SAIDA: 4 | CHEGADA: 0 | PESO: 0
+
+
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+[Sun Dec  1 13:05:19 2019] [arquivos/log_matrizes.log][Local: matrizAdjacencia.h - linha 79]
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]:
+    Lendo o tipo e o tamanho do grafo!
+    TIPO: 1 | TAMANHO: 5
+
+
+
+[matrizAdjacencia.h - le_matriz_arquivo() - Linha 79]: Lendo vértices de saída e chegada, e seu peso:
+
+  SAIDA: 0 | CHEGADA: 2 | PESO: 0
+
+
+  SAIDA: 0 | CHEGADA: 3 | PESO: 0
+
+
+  SAIDA: 1 | CHEGADA: 0 | PESO: 0
+
+
+  SAIDA: 2 | CHEGADA: 1 | PESO: 0
+
+
+  SAIDA: 3 | CHEGADA: 4 | PESO: 0
+
+
+  SAIDA: 4 | CHEGADA: 0 | PESO: 0
+
+
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]
+
+ MATRIZ ADJACÊNCIA
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------
+
+
+ [matrizAdjacencia.h - print_matriz() -  Linha 31]  
+
+ MATRIZ ADJACÊNCIA 
+ 0 0 1 1 0
+ 1 0 0 0 0
+ 0 1 0 0 0
+ 0 0 0 0 1
+ 1 0 0 0 0
+                 Matriz Lida com Sucesso!!
+ --------------------------------------------------------------------------------------------

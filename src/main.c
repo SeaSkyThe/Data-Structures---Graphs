@@ -11,6 +11,7 @@ void clearScreen(char* mensagem){
     getchar();
 
     write(STDOUT_FILENO, CLEAR_SCREEN_ANSI, 12);
+    system("@cls || clear");
 }
 
 int fileexists(const char * filename){
@@ -76,7 +77,7 @@ int main(void){
     printf(" 0 - Sair \n");
 
 
-    printf("\nPor favor escolha uma das opções acima: ");
+    printf("\nPor favor escolha uma das opcoes acima: ");
     scanf(" %d", &option);
     printf("\n");
     switch (option) {
@@ -104,7 +105,7 @@ int main(void){
 
             }
 
-            mensagem = "\nNão foi possivel encontrar esse arquivo, por favor, pressione ENTER e tente novamente...\n";
+            mensagem = "\nNao foi possivel encontrar esse arquivo, por favor, pressione ENTER e tente novamente...\n";
             clearScreen(mensagem);
 
             goto inicio;
@@ -114,12 +115,12 @@ int main(void){
         case 2:
         {
             print_matriz(matriz_adj, tamanho);
-            printf("\nO GRAFO QUE SERÁ SALVO, É O ULTIMO CARREGADO PELO USUÁRIO, CASO NENHUM TENHA SIDO CARREGADO\nO RESULTADO SERÁ UM ARQUIVO EM BRANCO\n");
+            printf("\nO GRAFO QUE SERA SALVO, EH O ULTIMO CARREGADO PELO USUARIO, CASO NENHUM TENHA SIDO CARREGADO\nO RESULTADO SERA UM ARQUIVO EM BRANCO\n");
             printf("\n\nDigite o caminho do arquivo para salvar o seu grafo: ");
             scanf("%s", caminho);
             if(fileexists(caminho)){
                 int flag;
-                printf("Esse arquivo já existe, deseja sobreescrever? \n");
+                printf("Esse arquivo ja existe, deseja sobreescrever? \n");
                 printf("1 - Sim\n");
                 printf("2 - Nao\n");
                 scanf("%d", &flag);

@@ -1,0 +1,48 @@
+------------------------------------------------------------------------------------------------------------------------------------
+
+[Sun Dec  1 13:05:27 2019] [arquivos/log_caminhos.log][Local: caminhos.h - dijkstra - linha 40] 
+
+  [caminhos.h - dijkstra() -  Linha 54]:  INICIALIZANDO VERTICE: 0
+  [caminhos.h - dijkstra() -  Linha 54]:  INICIALIZANDO VERTICE: 1
+  [caminhos.h - dijkstra() -  Linha 54]:  INICIALIZANDO VERTICE: 2
+  [caminhos.h - dijkstra() -  Linha 54]:  INICIALIZANDO VERTICE: 3
+  [caminhos.h - dijkstra() -  Linha 54]:  INICIALIZANDO VERTICE: 4
+  [caminhos.h - dijkstra() -  Linha 76]:  PEGANDO VERTICE DE MENOR DISTANCIA NÃO PROCESSADO: 0
+  [caminhos.h - dijkstra() -  Linha 86]:  INICIANDO RELAXAMENTOS
+
+  [caminhos.h - dijkstra() -  Linha 92]:  VERIFICANDO SE O VERTICE 2 ADJACENTE NECESSITA DE RELAXAMENTO
+  [caminhos.h - dijkstra() -  Linha 92]:  VERIFICANDO SE O VERTICE 3 ADJACENTE NECESSITA DE RELAXAMENTO
+  [caminhos.h - dijkstra() -  Linha 76]:  PEGANDO VERTICE DE MENOR DISTANCIA NÃO PROCESSADO: 3
+  [caminhos.h - dijkstra() -  Linha 86]:  INICIANDO RELAXAMENTOS
+
+  [caminhos.h - dijkstra() -  Linha 92]:  VERIFICANDO SE O VERTICE 4 ADJACENTE NECESSITA DE RELAXAMENTO
+  [caminhos.h - dijkstra() -  Linha 76]:  PEGANDO VERTICE DE MENOR DISTANCIA NÃO PROCESSADO: 2
+  [caminhos.h - dijkstra() -  Linha 86]:  INICIANDO RELAXAMENTOS
+
+  [caminhos.h - dijkstra() -  Linha 92]:  VERIFICANDO SE O VERTICE 1 ADJACENTE NECESSITA DE RELAXAMENTO
+  [caminhos.h - dijkstra() -  Linha 76]:  PEGANDO VERTICE DE MENOR DISTANCIA NÃO PROCESSADO: 4
+  [caminhos.h - dijkstra() -  Linha 86]:  INICIANDO RELAXAMENTOS
+
+  [caminhos.h - dijkstra() -  Linha 92]:  VERIFICANDO SE O VERTICE 0 ADJACENTE NECESSITA DE RELAXAMENTO
+  [caminhos.h - dijkstra() -  Linha 76]:  PEGANDO VERTICE DE MENOR DISTANCIA NÃO PROCESSADO: 1
+  [caminhos.h - dijkstra() -  Linha 86]:  INICIANDO RELAXAMENTOS
+
+  [caminhos.h - dijkstra() -  Linha 92]:  VERIFICANDO SE O VERTICE 0 ADJACENTE NECESSITA DE RELAXAMENTO
+
+
+ [caminhos.h - dijkstra() -  Linha 127]: Tabela gerada gravada com sucesso no arquivo:  arquivos/1.teste
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Sun Dec  1 13:06:29 2019] [arquivos/log_caminhos.log][Local: caminhos.h - bellman_ford - linha 141] 
+
+  [caminhos.h - bellman_ford() -  Linha 128]:  INICIALIZANDO VERTICE: 0
+  [caminhos.h - bellman_ford() -  Linha 128]:  INICIALIZANDO VERTICE: 1
+  [caminhos.h - bellman_ford() -  Linha 128]:  INICIALIZANDO VERTICE: 2
+  [caminhos.h - bellman_ford() -  Linha 128]:  INICIALIZANDO VERTICE: 3
+  [caminhos.h - bellman_ford() -  Linha 128]:  INICIALIZANDO VERTICE: 4
+  [caminhos.h - bellman_ford() -  Linha 217]:  RELAXANDO TODAS AS ARESTAS |V| - 1 vezes
+  [caminhos.h - bellman_ford() -  Linha 233]:  VERIFICAÇÃO DE CICLOS NEGATIVOS
+
+
+ [caminhos.h - Bellman() -  Linha 266]: Tabela gerada gravada com sucesso no arquivo:  arquivos/1.teste
+------------------------------------------------------------------------------------------------------------------------------------

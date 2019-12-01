@@ -38,14 +38,24 @@ int distanciaMin(struct node_largura* vertices[], int S[], int tamanho){  //S é
 }
 
 int dijkstra(int matriz_adj[TAM][TAM], int raiz, int tamanho, char *arquivo_destino){
+    if(logger){
+        log_print(arquivo_log_caminhos, "caminhos.h - Linha 265", "------------------------------------------------------------------------------------------------------------------------------------");
+        FILE *fp;
+        fp = fopen (arquivo_log_caminhos,"a+");
+        fprintf(fp,"\n\n%s ", print_time());
+        fprintf(fp,"[%s]",arquivo_log_caminhos);
+        fprintf(fp,"[Local: %s] \n","caminhos.h - dijkstra - linha 40");
+        fclose(fp);
+    }
 
     struct node_largura* vertices[tamanho];  //array que guarda os vertices
+
 
     int S[tamanho]; //array que ira ser "true" caso vertice ja tenha sido usado no caminho e "false" caso não
     for(int i = 0; i < tamanho; i ++){
         //inicializando vertices
         if(logger){
-            log_print(arquivo_log_caminhos, "caminhos.h - dijkstra - linha 45", "\n  [caminhos.h - dijkstra() -  Linha 45]:  INICIALIZANDO VERTICE: %d", i);
+            log_print(arquivo_log_caminhos, "\ncaminhos.h - dijkstra - linha 54", "\n  [caminhos.h - dijkstra() -  Linha 54]:  INICIALIZANDO VERTICE: %d", i);
         }
         struct node_largura *temp = (struct node_largura*)malloc(sizeof(struct node_largura));
         if(i != raiz){
@@ -68,17 +78,17 @@ int dijkstra(int matriz_adj[TAM][TAM], int raiz, int tamanho, char *arquivo_dest
         int u = distanciaMin(vertices, S, tamanho);  //pega o vertice de menor distancia do array de vertices não processados
         S[u] = 1; //depois de ser pego, marcamos como utilizado no array S[]
         if(logger){
-            log_print(arquivo_log_caminhos, "caminhos.h - dijkstra - linha 68", "\n  [caminhos.h - dijkstra() -  Linha 68]:  PEGANDO VERTICE DE MENOR DISTANCIA NÃO PROCESSADO: %d", u);
+            log_print(arquivo_log_caminhos, "caminhos.h - dijkstra - linha 76", "\n  [caminhos.h - dijkstra() -  Linha 76]:  PEGANDO VERTICE DE MENOR DISTANCIA NÃO PROCESSADO: %d", u);
         }
         //relaxa
         if(logger){
-            log_print(arquivo_log_caminhos, "caminhos.h - dijkstra - linha 73", "\n  [caminhos.h - dijkstra() -  Linha 73]:  INICIANDO RELAXAMENTOS\n");
+            log_print(arquivo_log_caminhos, "caminhos.h - dijkstra - linha 86", "\n  [caminhos.h - dijkstra() -  Linha 86]:  INICIANDO RELAXAMENTOS\n");
         }
         for(int v = 0; v < tamanho; v++){
             //atualiza a distancia do vertice v, se existe uma aresta entre 'u' e 'v', e se o peso total
             //do caminho da raiz para o v for menor que a distancia atual de v
             if(logger && matriz_adj[u][v]){
-                log_print(arquivo_log_caminhos, "caminhos.h - dijkstra - linha 77", "\n  [caminhos.h - dijkstra() -  Linha 77]:  VERIFICANDO SE O VERTICE %d ADJACENTE NECESSITA DE RELAXAMENTO", v);
+                log_print(arquivo_log_caminhos, "caminhos.h - dijkstra - linha 92", "\n  [caminhos.h - dijkstra() -  Linha 92]:  VERIFICANDO SE O VERTICE %d ADJACENTE NECESSITA DE RELAXAMENTO", v);
             }
             if(matriz_adj[u][v] && (vertices[u] -> distancia + matriz_adj[u][v]) < vertices[v] -> distancia){
                 vertices[v] -> distancia = (vertices[u] -> distancia) + matriz_adj[u][v];
@@ -94,9 +104,15 @@ int dijkstra(int matriz_adj[TAM][TAM], int raiz, int tamanho, char *arquivo_dest
     FILE *f = fopen(arquivo_destino, "w+");
     if(f == NULL){
         printf("Não foi possivel realizar a gravação da sua tabela de resultados, por favor tente novamente!\n");
-        log_print(arquivo_log_buscas, "[caminhos.h - dijkstra() - Linha 81]: ERRO DE GRAVAÇÃO", "Não foi possível gravar a sua tabela de resultados, por favor, tente novamente.\n");
+        log_print(arquivo_log_caminhos, "[caminhos.h - dijkstra() - Linha 104]: ERRO DE GRAVAÇÃO", "Não foi possível gravar a sua tabela de resultados, por favor, tente novamente.\n");
         return 0;
     }
+
+    if(logger){
+        log_print(arquivo_log_caminhos, "caminhos.h - Linha 127", "\n\n\n [caminhos.h - dijkstra() -  Linha 127]: Tabela gerada gravada com sucesso no arquivo:  %s\n", arquivo_destino);
+        log_print(arquivo_log_caminhos, "caminhos.h - Linha 127", "------------------------------------------------------------------------------------------------------------------------------------");
+    }
+
     fprintf(f, "RAIZ: %d\n", raiz);
     fprintf(f, "\n| VERTICE | DISTANCIA | PAI |\n\n");
     for(int k = 0; k < tamanho; k++){
@@ -113,6 +129,8 @@ int dijkstra(int matriz_adj[TAM][TAM], int raiz, int tamanho, char *arquivo_dest
     printf("\n\n");
 
     fclose(f);
+
+
     return 1;
 }
 
@@ -126,12 +144,22 @@ int dijkstra(int matriz_adj[TAM][TAM], int raiz, int tamanho, char *arquivo_dest
 
 
 int bellman_ford(int matriz_adj[TAM][TAM], int raiz, int tamanho, int tipo, char *arquivo_destino){
+    if(logger){
+        log_print(arquivo_log_caminhos, "caminhos.h - Linha 265", "------------------------------------------------------------------------------------------------------------------------------------");
+        FILE *fp;
+        fp = fopen (arquivo_log_caminhos,"a+");
+        fprintf(fp,"\n\n%s ", print_time());
+        fprintf(fp,"[%s]",arquivo_log_caminhos);
+        fprintf(fp,"[Local: %s] \n","caminhos.h - bellman_ford - linha 141");
+        fclose(fp);
+    }
+
     int num_v = tamanho; //numero de vertices
     int num_a = numArestas(matriz_adj, tamanho, tipo); //num de arestas
     struct node_largura* vertices[tamanho];  //array que guarda os vertices
     for(int i = 0; i < tamanho; i ++){
         if(logger){
-            log_print(arquivo_log_caminhos, "caminhos.h - bellman_ford - linha 128", "\n  [caminhos.h - bellman_ford() -  Linha 128]:  INICIALIZANDO VERTICE: %d", i);
+            log_print(arquivo_log_caminhos, "caminhos.h - bellman_ford - linha 157", "\n  [caminhos.h - bellman_ford() -  Linha 128]:  INICIALIZANDO VERTICE: %d", i);
         }
         //inicializando vertices
         struct node_largura *temp = (struct node_largura*)malloc(sizeof(struct node_largura));
@@ -189,7 +217,7 @@ int bellman_ford(int matriz_adj[TAM][TAM], int raiz, int tamanho, int tipo, char
     }
     //relaxa todas as arestas 'num_v - 1' vezes
     if(logger){
-        log_print(arquivo_log_caminhos, "caminhos.h - bellman_ford - linha 192", "\n  [caminhos.h - bellman_ford() -  Linha 192]:  RELAXANDO TODAS AS ARESTAS |V| - 1 vezes");
+        log_print(arquivo_log_caminhos, "caminhos.h - bellman_ford - linha 217", "\n  [caminhos.h - bellman_ford() -  Linha 217]:  RELAXANDO TODAS AS ARESTAS |V| - 1 vezes");
     }
     for(int i = 1; i <= num_v - 1; i++){
         for(int j = 0; j < num_a; j++){
@@ -204,7 +232,7 @@ int bellman_ford(int matriz_adj[TAM][TAM], int raiz, int tamanho, int tipo, char
     }
 
     if(logger){
-        log_print(arquivo_log_caminhos, "caminhos.h - bellman_ford - linha 209", "\n  [caminhos.h - bellman_ford() -  Linha 209]:  VERIFICAÇÃO DE CICLOS NEGATIVOS");
+        log_print(arquivo_log_caminhos, "caminhos.h - bellman_ford - linha 233", "\n  [caminhos.h - bellman_ford() -  Linha 233]:  VERIFICAÇÃO DE CICLOS NEGATIVOS");
     }
     //refaz para verificar se existem ciclos de peso negativo
     for(int i = 0; i < num_a; i++){
@@ -220,8 +248,12 @@ int bellman_ford(int matriz_adj[TAM][TAM], int raiz, int tamanho, int tipo, char
     FILE *f = fopen(arquivo_destino, "w+");
     if(f == NULL){
         printf("Não foi possivel realizar a gravação da sua tabela de resultados, por favor tente novamente!\n");
-        log_print(arquivo_log_buscas, "[caminhos.h - bellman_ford() - Linha 179]: ERRO DE GRAVAÇÃO", "Não foi possível gravar a sua tabela de resultados, por favor, tente novamente.\n");
+        log_print(arquivo_log_caminhos, "[caminhos.h - bellman_ford() - Linha 246]: ERRO DE GRAVAÇÃO", "Não foi possível gravar a sua tabela de resultados, por favor, tente novamente.\n");
         return 0;
+    }
+    if(logger){
+        log_print(arquivo_log_caminhos, "caminhos.h - Linha 265", "\n\n\n [caminhos.h - Bellman() -  Linha 266]: Tabela gerada gravada com sucesso no arquivo:  %s\n", arquivo_destino);
+        log_print(arquivo_log_caminhos, "caminhos.h - Linha 265", "------------------------------------------------------------------------------------------------------------------------------------");
     }
     fprintf(f, "RAIZ: %d\n", raiz);
     fprintf(f, "\n| VERTICE | DISTANCIA | PAI |\n\n");
@@ -239,6 +271,7 @@ int bellman_ford(int matriz_adj[TAM][TAM], int raiz, int tamanho, int tipo, char
     printf("\n\n");
 
     fclose(f);
+
     return 0;
 
 }

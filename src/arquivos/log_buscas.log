@@ -241,7 +241,7 @@
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
- [matrizAdjacencia.h - le_matriz_arquivo() -  Linha 72] [matrizAdjacencia.h - print_matriz() -  Linha 36]: 
+ [matrizAdjacencia.h - le_matriz_arquivo() -  Linha 72] [matrizAdjacencia.h - print_matriz() -  Linha 36]:
 
  MATRIZ ADJACÊNCIA
  0 0 1 1 0
@@ -252,13 +252,13 @@
 
  | INICIALIZANDO BUSCA EM PROFUNDIDADE |
 
-  [buscas.h - busca_profundidade() -  Linha 104]:  Vértice Raiz: 0 Inicializado 
+  [buscas.h - busca_profundidade() -  Linha 104]:  Vértice Raiz: 0 Inicializado
   Inicializando restante dos vértices
 
-  Vértice Inicializado: 1 
-  Vértice Inicializado: 2 
-  Vértice Inicializado: 3 
-  Vértice Inicializado: 4 
+  Vértice Inicializado: 1
+  Vértice Inicializado: 2
+  Vértice Inicializado: 3
+  Vértice Inicializado: 4
 
   [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 0: 1
 
@@ -301,7 +301,7 @@
  [buscas.h - busca_profundidade() -  Linha 144]: Tabela gerada gravada com sucesso no arquivo:  arquivos/tabela_prfundidade.txt
 ------------------------------------------------------------------------------------------------------------------------------------
 
- [matrizAdjacencia.h - le_matriz_arquivo() -  Linha 72] [matrizAdjacencia.h - print_matriz() -  Linha 36]: 
+ [matrizAdjacencia.h - le_matriz_arquivo() -  Linha 72] [matrizAdjacencia.h - print_matriz() -  Linha 36]:
 
  MATRIZ ADJACÊNCIA
  0 0 1 1 0
@@ -312,13 +312,13 @@
 
  | INICIALIZANDO BUSCA EM PROFUNDIDADE |
 
-  [buscas.h - busca_profundidade() -  Linha 104]:  Vértice Raiz: 0 Inicializado 
+  [buscas.h - busca_profundidade() -  Linha 104]:  Vértice Raiz: 0 Inicializado
   Inicializando restante dos vértices
 
-  Vértice Inicializado: 1 
-  Vértice Inicializado: 2 
-  Vértice Inicializado: 3 
-  Vértice Inicializado: 4 
+  Vértice Inicializado: 1
+  Vértice Inicializado: 2
+  Vértice Inicializado: 3
+  Vértice Inicializado: 4
 
   [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 0: 1
 
@@ -361,7 +361,7 @@
  [buscas.h - busca_profundidade() -  Linha 144]: Tabela gerada gravada com sucesso no arquivo:  arquivos/tabela_profundidade.txt
 ------------------------------------------------------------------------------------------------------------------------------------
 
- [matrizAdjacencia.h - le_matriz_arquivo() -  Linha 72] [matrizAdjacencia.h - print_matriz() -  Linha 36]: 
+ [matrizAdjacencia.h - le_matriz_arquivo() -  Linha 72] [matrizAdjacencia.h - print_matriz() -  Linha 36]:
 
  MATRIZ ADJACÊNCIA
  0 0 1 1 0
@@ -372,13 +372,13 @@
 
  | INICIALIZANDO BUSCA EM PROFUNDIDADE |
 
-  [buscas.h - busca_profundidade() -  Linha 104]:  Vértice Raiz: 0 Inicializado 
+  [buscas.h - busca_profundidade() -  Linha 104]:  Vértice Raiz: 0 Inicializado
   Inicializando restante dos vértices
 
-  Vértice Inicializado: 1 
-  Vértice Inicializado: 2 
-  Vértice Inicializado: 3 
-  Vértice Inicializado: 4 
+  Vértice Inicializado: 1
+  Vértice Inicializado: 2
+  Vértice Inicializado: 3
+  Vértice Inicializado: 4
 
   [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 0: 1
 
@@ -421,7 +421,7 @@
  [buscas.h - busca_profundidade() -  Linha 144]: Tabela gerada gravada com sucesso no arquivo:  arquivos/tabela_profundidade1.txt
 ------------------------------------------------------------------------------------------------------------------------------------
 
- [matrizAdjacencia.h - le_matriz_arquivo() -  Linha 72] [matrizAdjacencia.h - print_matriz() -  Linha 36]: 
+ [matrizAdjacencia.h - le_matriz_arquivo() -  Linha 72] [matrizAdjacencia.h - print_matriz() -  Linha 36]:
 
  MATRIZ ADJACÊNCIA
  0 0 1 0
@@ -431,12 +431,12 @@
 
  | INICIALIZANDO BUSCA EM PROFUNDIDADE |
 
-  [buscas.h - busca_profundidade() -  Linha 104]:  Vértice Raiz: 0 Inicializado 
+  [buscas.h - busca_profundidade() -  Linha 104]:  Vértice Raiz: 0 Inicializado
   Inicializando restante dos vértices
 
-  Vértice Inicializado: 1 
-  Vértice Inicializado: 2 
-  Vértice Inicializado: 3 
+  Vértice Inicializado: 1
+  Vértice Inicializado: 2
+  Vértice Inicializado: 3
 
   [buscas.h - visita_profundidade() -  Linha 32]:  DESCOBERTA DE 0: 1
 
@@ -467,9 +467,9 @@
  [buscas.h - busca_profundidade() -  Linha 144]: Tabela gerada gravada com sucesso no arquivo:  arquivos/tabela_grafo4.tbl
 ------------------------------------------------------------------------------------------------------------------------------------
 
- [matrizAdjacencia.h - le_matriz_arquivo() -  Linha 72] [matrizAdjacencia.h - print_matriz() -  Linha 36]: 
+ [matrizAdjacencia.h - le_matriz_arquivo() -  Linha 72] [matrizAdjacencia.h - print_matriz() -  Linha 36]:
 
- MATRIZ ADJACÊNCIA 
+ MATRIZ ADJACÊNCIA
  0 0 1 0
  1 0 0 0
  0 1 0 0
@@ -477,45 +477,45 @@
 
  | INICIALIZANDO BUSCA EM LARGURA |
 
-  [buscas.h - busca_largura() -  Linha 262]:  Vértice Raiz: 0 Inicializado 
+  [buscas.h - busca_largura() -  Linha 262]:  Vértice Raiz: 0 Inicializado
   Inicializando restante dos vértices
 
-  [buscas.h - busca_largura() -  Linha 262]: Vértice Inicializado: 1 
-  [buscas.h - busca_largura() -  Linha 262]: Vértice Inicializado: 2 
-  [buscas.h - busca_largura() -  Linha 262]: Vértice Inicializado: 3 
+  [buscas.h - busca_largura() -  Linha 262]: Vértice Inicializado: 1
+  [buscas.h - busca_largura() -  Linha 262]: Vértice Inicializado: 2
+  [buscas.h - busca_largura() -  Linha 262]: Vértice Inicializado: 3
 
 
-  [buscas.h - busca_largura() -  Linha 287]: Enfileirando a raiz 0 
+  [buscas.h - busca_largura() -  Linha 287]: Enfileirando a raiz 0
 
-  [buscas.h - busca_largura() -  Linha 297]: Desenfileirando vértice: 0 
+  [buscas.h - busca_largura() -  Linha 297]: Desenfileirando vértice: 0
 
   [buscas.h - busca_largura() -  Linha 310]: Verificando os vértices adjacentes brancos à: 0
 
 
   Atualizando vértice adjacente encontrado: 2
-    [buscas.h - busca_largura() -  Linha 314]: Cor: c 
-    [buscas.h - busca_largura() -  Linha 315]: Distancia: 1 
-    [buscas.h - busca_largura() -  Linha 316]: Pai: 0 
+    [buscas.h - busca_largura() -  Linha 314]: Cor: c
+    [buscas.h - busca_largura() -  Linha 315]: Distancia: 1
+    [buscas.h - busca_largura() -  Linha 316]: Pai: 0
 
-  [buscas.h - busca_largura() -  Linha 329]: Finalizando vertice atual : 0 - Cor: P 
+  [buscas.h - busca_largura() -  Linha 329]: Finalizando vertice atual : 0 - Cor: P
 
-  [buscas.h - busca_largura() -  Linha 297]: Desenfileirando vértice: 2 
+  [buscas.h - busca_largura() -  Linha 297]: Desenfileirando vértice: 2
 
   [buscas.h - busca_largura() -  Linha 310]: Verificando os vértices adjacentes brancos à: 2
 
 
   Atualizando vértice adjacente encontrado: 1
-    [buscas.h - busca_largura() -  Linha 314]: Cor: c 
-    [buscas.h - busca_largura() -  Linha 315]: Distancia: 2 
-    [buscas.h - busca_largura() -  Linha 316]: Pai: 2 
+    [buscas.h - busca_largura() -  Linha 314]: Cor: c
+    [buscas.h - busca_largura() -  Linha 315]: Distancia: 2
+    [buscas.h - busca_largura() -  Linha 316]: Pai: 2
 
-  [buscas.h - busca_largura() -  Linha 329]: Finalizando vertice atual : 2 - Cor: P 
+  [buscas.h - busca_largura() -  Linha 329]: Finalizando vertice atual : 2 - Cor: P
 
-  [buscas.h - busca_largura() -  Linha 297]: Desenfileirando vértice: 1 
+  [buscas.h - busca_largura() -  Linha 297]: Desenfileirando vértice: 1
 
   [buscas.h - busca_largura() -  Linha 310]: Verificando os vértices adjacentes brancos à: 1
 
-  [buscas.h - busca_largura() -  Linha 329]: Finalizando vertice atual : 1 - Cor: P 
+  [buscas.h - busca_largura() -  Linha 329]: Finalizando vertice atual : 1 - Cor: P
 
 
 
